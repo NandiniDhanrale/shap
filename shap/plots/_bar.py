@@ -90,6 +90,13 @@ def bar(
         )
         raise TypeError(emsg)
 
+    if len(cohorts) == 0:
+        emsg = (
+            "The shap_values argument must be an Explanation object, Cohorts "
+            "object, or dictionary of Explanation objects!"
+        )
+        raise TypeError(emsg)
+
     # unpack our list of Explanation objects we need to plot
     cohort_labels = list(cohorts.keys())
     cohort_exps = list(cohorts.values())
